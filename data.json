@@ -1,0 +1,153 @@
+{
+  "cabins": [
+    {
+      "id": 1,
+      "name": "Hollow Purple",
+      "maxCapacity": 8,
+      "regularPrice": 5000,
+      "discount": 15,
+      "description": "This cabin is called hollow purple",
+      "image": "wtf.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Melevolent Shrine",
+      "maxCapacity": 12,
+      "regularPrice": 8000,
+      "discount": 10,
+      "description": "This cabin is called Melevolent Shrine",
+      "image": "mff.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Self-imbodyment of perfection",
+      "maxCapacity": 4,
+      "regularPrice": 4000,
+      "discount": 20,
+      "description": "This cabin is called Self-imbodyment of perfection",
+      "image": "lol.jpg"
+    },
+    {
+      "id": 4,
+      "name": "cofin of the iron mountain",
+      "maxCapacity": 5,
+      "regularPrice": 6000,
+      "discount": 12,
+      "description": "This cabin is called cofin of the iron mountain",
+      "image": "stfu.jpg"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "fullname": "Rubayat",
+      "email": "rubayat@gmail.com",
+      "nationality": "Bangladeshi",
+      "countryFlag": "bd",
+      "nationalId": "1"
+    },
+    {
+      "id": 2,
+      "fullname": "Hossain",
+      "email": "hossain@gmail.com",
+      "nationality": "Bangladeshi",
+      "countryFlag": "bd",
+      "nationalId": "2"
+    },
+    {
+      "id": 3,
+      "fullname": "Ridoy",
+      "email": "ridoy@gmail.com",
+      "nationality": "Bangladeshi",
+      "countryFlag": "bd",
+      "nationalId": "3"
+    },
+    {
+      "id": 4,
+      "fullname": "Ahmed",
+      "email": "ahmed@gmail.com",
+      "nationality": "Bangladeshi",
+      "countryFlag": "bd",
+      "nationalId": "4"
+    }
+  ],
+  "settings": [
+    {
+      "id": 1,
+      "minBookingLength": 1,
+      "maxBookingLength": 90,
+      "maxGuestsForBookings": 10,
+      "breakfastPrice": 100
+    }
+  ],
+  "bookings": [
+    {
+      "id": 1,
+      "startDate": "1/31/24",
+      "endDate": "2/10/24",
+      "numNights": 10,
+      "numOfGuests": 4,
+      "price": 6000,
+      "cabinPrice": 5000,
+      "extraPrice": 1000,
+      "totalPrice": 12000,
+      "status": "LooooooooooooooooooooL",
+      "hasBreakfast": true,
+      "isPaid": true,
+      "observation": "LoooooooooooooooooooooooooooooooLOOOOOOOOOOlLoooooooooooooooL",
+      "cabinId": 1,
+      "guestsId": 1
+    },
+    {
+      "id": 2,
+      "startDate": "1/31/24",
+      "endDate": "2/10/24",
+      "numNights": 10,
+      "numOfGuests": 4,
+      "price": 6000,
+      "cabinPrice": 5000,
+      "extraPrice": 1000,
+      "totalPrice": 12000,
+      "status": "LooooooooooooooooooooL",
+      "hasBreakfast": true,
+      "isPaid": true,
+      "observation": "LoooooooooooooooooooooooooooooooLOOOOOOOOOOlLoooooooooooooooL",
+      "cabinId": 2,
+      "guestsId": 2
+    },
+    {
+      "id": 3,
+      "startDate": "1/31/24",
+      "endDate": "2/10/24",
+      "numNights": 10,
+      "numOfGuests": 4,
+      "price": 6000,
+      "cabinPrice": 5000,
+      "extraPrice": 1000,
+      "totalPrice": 12000,
+      "status": "LooooooooooooooooooooL",
+      "hasBreakfast": true,
+      "isPaid": true,
+      "observation": "LoooooooooooooooooooooooooooooooLOOOOOOOOOOlLoooooooooooooooL",
+      "cabinId": 3,
+      "guestsId": 3
+    },
+    {
+      "id": 4,
+      "startDate": "1/31/24",
+      "endDate": "2/10/24",
+      "numNights": 10,
+      "numOfGuests": 4,
+      "price": 6000,
+      "cabinPrice": 5000,
+      "extraPrice": 1000,
+      "totalPrice": 12000,
+      "status": "LooooooooooooooooooooL",
+      "hasBreakfast": true,
+      "isPaid": true,
+      "observation": "LoooooooooooooooooooooooooooooooLOOOOOOOOOOlLoooooooooooooooL",
+      "cabinId": 4,
+      "guestsId": 4
+    }
+  ]
+}
