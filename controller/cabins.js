@@ -84,9 +84,10 @@ exports.replace = async (req, res) => {
 };
 
 exports.update = async (req, res) => {
-  //console.log("Update Req is:", req.body, req.file);
+  console.log("Update Req is:", req.body, req.file);
   const id = req.params.id;
-  try {
+
+  if (req.file) {
     const cabin = await Cabin.findOneAndUpdate(
       { _id: id },
       { ...req.body, image: req.file.filename },
@@ -95,9 +96,11 @@ exports.update = async (req, res) => {
       }
     );
     res.json(cabin);
-  } catch (error) {
-    console.log(error);
-    res.status(400).send(error);
+  } else {
+    const cabin = await Cabin.findOneAndUpdate({ _id: id }, req.body, {
+      new: true,
+    });
+    res.json(cabin);
   }
 };
 
