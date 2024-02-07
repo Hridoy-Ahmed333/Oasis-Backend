@@ -8,6 +8,8 @@ const User = model.User;
 
 exports.create = async (req, res) => {
   const user = new User(req.body);
+  user.created_at = Date.now();
+
   try {
     const output = await user.save();
     console.log(output);

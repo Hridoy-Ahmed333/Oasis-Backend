@@ -3,6 +3,7 @@ const { Schema } = mongoose;
 const bookingsSchema = new Schema({
   startDate: { type: Date, required: true },
   endDate: { type: Date, required: true },
+  created_at: { type: Date, required: true },
   numNights: Number,
   numOfGuests: Number,
   price: Number,

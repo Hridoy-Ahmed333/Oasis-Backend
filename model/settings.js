@@ -5,6 +5,7 @@ const settingsSchema = new Schema({
   maxBookingLength: { type: Number, required: true },
   maxGuestsForBookings: { type: Number, required: true },
   breakfastPrice: { type: Number, required: true },
+  created_at: { type: Date, required: true },
 });
 
 exports.Setting = mongoose.model("Setting", settingsSchema);

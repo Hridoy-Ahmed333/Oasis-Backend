@@ -16,7 +16,8 @@
 const express = require("express");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
-const cors = require("cors"); // Import the cors package
+const cors = require("cors");
+const jwt = require("jsonwebtoken"); // Import the cors package
 const server = express();
 
 main().catch((err) => console.log(err));
@@ -30,14 +31,39 @@ const cabinsRouter = require("./router/cabins");
 const usersRouter = require("./router/users");
 const settingsRouter = require("./router/settings");
 const bookingsRouter = require("./router/bookings");
+const authRouter = require("./router/auth");
 
 server.use(cors()); // Use cors middleware
 server.use(express.json());
 server.use(morgan("combined"));
+
+const auth = (req, res, next) => {
+  const token = req.get("Authorization"?.split("Bearer ")[1]);
+  console.log(token);
+  try {
+    var decoded = jwt.verify(token, "01994083178");
+    console.log(decoded);
+    if (decoded.email) {
+      next();
+    } else {
+      res.sendStatus(401);
+    }
+  } catch {
+    res.sendStatus(401);
+  }
+};
+
 server.use("/cabins", cabinsRouter.cabinsRouter);
 server.use("/users", usersRouter.usersRouter);
 server.use("/settings", settingsRouter.settingsRouter);
 server.use("/bookings", bookingsRouter.bookingsRouter);
+
+//After Authorization
+//server.use("/auth", authRouter.authRouter);
+// server.use("/cabins",auth, cabinsRouter.cabinsRouter);
+// server.use("/users", auth, usersRouter.usersRouter);
+// server.use("/settings", auth, settingsRouter.settingsRouter);
+// server.use("/bookings", auth, bookingsRouter.bookingsRouter);
 
 server.listen(5050, () => {
   console.log("Server started at Port 5050");

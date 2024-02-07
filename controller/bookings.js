@@ -13,10 +13,11 @@ const Booking = model.Booking;
 
 exports.create = async (req, res) => {
   const booking = new Booking(req.body);
+  booking.created_at = Date.now();
   try {
     const output = await booking.save();
     console.log(output);
-    res.status(201).json(output);
+    res.status(200).json(output);
   } catch (error) {
     console.error(error);
     res.status(400).send(error);
@@ -41,7 +42,8 @@ exports.getAll = async (req, res) => {
       })
     );
 
-    res.json(allBookings);
+    // res.json(allBookings);
+    res.status(200).json(allBookings);
   } catch (error) {
     console.log(error);
     res.status(400).send(error);
@@ -55,7 +57,8 @@ exports.getOne = async (req, res) => {
     const cabin = await Cabin.findById(booking.cabinId);
     const guest = await User.findById(booking.guestsId);
     const wholeBooking = { booking, cabin, guest };
-    res.json(wholeBooking);
+    res.status(200).json(wholeBooking);
+    // res.json(wholeBooking);
   } catch (error) {
     console.log(error);
     res.status(400).send(error);
@@ -68,7 +71,8 @@ exports.replace = async (req, res) => {
     const booking = await Booking.findOneAndReplace({ _id: id }, req.body, {
       new: true,
     });
-    res.json(booking);
+    res.status(200).json(booking);
+    //res.json(booking);
   } catch (error) {
     console.log(error);
     res.status(400).send(error);
@@ -81,7 +85,8 @@ exports.update = async (req, res) => {
     const booking = await Booking.findOneAndUpdate({ _id: id }, req.body, {
       new: true,
     });
-    res.json(booking);
+    res.status(200).json(booking);
+    //res.json(booking);
   } catch (error) {
     console.log(error);
     res.status(400).send(error);
@@ -92,7 +97,8 @@ exports.deleteOne = async (req, res) => {
   const id = req.params.id;
   try {
     const booking = await Booking.findOneAndDelete({ _id: id });
-    res.json(booking);
+    res.status(200).json(booking);
+    //res.json(booking);
   } catch (error) {
     console.log(error);
     res.status(400).send(error);

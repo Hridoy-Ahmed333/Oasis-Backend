@@ -8,9 +8,10 @@ const Setting = model.Setting;
 
 exports.create = async (req, res) => {
   const setting = new Setting(req.body);
+  setting.created_at = Date.now();
   try {
     const output = await setting.save();
-    console.log(output);
+    //console.log(output);
     res.status(201).json(output);
   } catch (error) {
     console.error(error);

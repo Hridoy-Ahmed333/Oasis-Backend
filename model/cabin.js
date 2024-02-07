@@ -15,6 +15,7 @@ const cabinSchema = new Schema({
   },
   description: String,
   image: { type: String, required: true },
+  //image: { type: String },
 });
 
 exports.Cabin = mongoose.model("Cabin", cabinSchema);
